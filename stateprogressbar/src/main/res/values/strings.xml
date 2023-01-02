@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">stateprogressbar</string>
     <string name="check_icon">&#xf00c;</string>
+    <string name="circle_color"></string>
 </resources>

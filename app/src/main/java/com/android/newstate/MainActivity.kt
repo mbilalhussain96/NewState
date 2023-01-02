@@ -14,19 +14,20 @@ class MainActivity : AppCompatActivity() {
     var descriptionData = arrayOf("Step One", "Step Two", "Step Three", "Step Four", "Step Five", "Step Six")
 
     var button: Button? = null
-
+    var back: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val stateProgressBar =
-            findViewById<View>(R.id.your_state_progress_bar_id) as StateProgressBar
+        val stateProgressBar = findViewById<View>(R.id.your_state_progress_bar_id) as StateProgressBar
         stateProgressBar.setStateDescriptionData(descriptionData)
 
         // button given along with id
 
         // button given along with id
         button = findViewById<View>(R.id.button) as Button
+        back = findViewById<View>(R.id.nback) as Button
+
 
         button!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
@@ -36,11 +37,25 @@ class MainActivity : AppCompatActivity() {
                     3 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR)
                     4 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FIVE)
                     5 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.SIX)
-                    6 -> stateProgressBar.setAllStatesCompleted(true)
+                    6 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.SEVEN)
+                    7 -> stateProgressBar.setAllStatesCompleted(true)
                 }
             }
         })
 
+        back!!.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View?) {
+                when (stateProgressBar.currentStateNumber) {
+                    7 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.SIX)
+                    6 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FIVE)
+                    5 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR)
+                    4 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.THREE)
+                    3 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO)
+                    2 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE)
+                    1 -> stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE)
+                }
+            }
+        })
 
     }
 }

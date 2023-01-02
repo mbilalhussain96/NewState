@@ -6,32 +6,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <!--Progress Bar created-->
     <com.android.stateprogressbar.StateProgressBar
         android:id="@+id/your_state_progress_bar_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        app:spb_animateToCurrentProgressState="true"
-        app:spb_checkStateCompleted="true"
-        app:spb_currentStateDescriptionColor="#0F9D58"
+
         app:spb_currentStateNumber="one"
-        app:spb_maxStateNumber="six"
+        app:spb_maxStateNumber="seven"
         app:spb_stateBackgroundColor="#BDBDBD"
-        app:spb_stateDescriptionColor="#808080"
-        app:spb_stateForegroundColor="#0F9D58"
+        app:spb_stateForegroundColor="#009688"
         app:spb_stateNumberBackgroundColor="#808080"
-        app:spb_stateNumberForegroundColor="#eeeeee" />
+        app:spb_stateNumberForegroundColor="#eeeeee"
+        app:spb_currentStateDescriptionColor="#009688"
+        app:spb_stateDescriptionColor="#808080"
+        app:spb_checkStateCompleted="true"
+
+
+        />
 
     <!--Button to go on next step-->
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="NEXT"
+
+        />
+    <Button
+        android:id="@+id/nback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="NEXT" />
+        android:text="back"
+
+        />
 
 </RelativeLayout>
